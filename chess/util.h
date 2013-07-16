@@ -10,22 +10,11 @@
 #define chess_util_h
 
 typedef enum {
-    PieceTypeInvalid, PieceTypeNone, PieceTypePawn, PieceTypeKnight, PieceTypeBishop, PieceTypeRook, PieceTypeQueen, PieceTypeKing
+    PieceTypeInvalid, PieceTypePawn, PieceTypeKnight, PieceTypeBishop, PieceTypeRook, PieceTypeQueen, PieceTypeKing
 } PieceType;
 
 typedef enum {
     SideInvalid, SideBlack, SideWhite
 } Side;
-
-typedef struct {
-    int x, y;
-} Pos;
-
-static inline Pos makePos (int x, int y) {
-    Pos pos;
-    pos.x = x;
-    pos.y = y;
-    return pos;
-}
 
 #endif

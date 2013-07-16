@@ -19,4 +19,11 @@
     return self;
 }
 
+-(id)copyWithZone:(NSZone *)zone
+{
+    Piece *newPiece = [[Piece allocWithZone:zone] initWithType:self.type side:self.side];
+    newPiece.numMoves = self.numMoves;
+    return newPiece;
+}
+
 @end

@@ -1,5 +1,5 @@
 //
-//  RuleBook.h
+//  Minimax.h
 //  chess
 //
 //  Created by Andrew Wang on 7/15/13.
@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "util.h"
 
-@class Piece,ChessBoard,Pos;
-@interface RuleBook : NSObject
+@class Move, ChessBoard;
+@interface Minimax : NSObject
 
-+(NSSet *)coverageForPiece:(Piece *)piece atPos:(Pos *)pos inBoard:(ChessBoard *)board;
++(Move *)bestMoveForSide:(Side)side board:(ChessBoard *)board;
+
 @end

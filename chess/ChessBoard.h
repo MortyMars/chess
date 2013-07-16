@@ -9,12 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "util.h"
 
-@class Piece;
-@interface ChessBoard : NSObject
+@class Piece,Pos,Move;
+@interface ChessBoard : NSObject <NSCopying>
 {
     Piece *board[8][8];
 }
 
--(Piece *)pieceAtPos:(Pos)pos;
+@property (nonatomic, strong) Move *lastMove;
+
+-(Piece *)pieceAtX:(int)x y:(int)y;
+-(Piece *)pieceAtPos:(Pos *)pos;
+-(Piece *)movePieceFrom:(Pos *)start to:(Pos *)dest;
+-(void)performMove:(Move *)move;
 
 @end

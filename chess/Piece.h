@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "util.h"
 
-@interface Piece : NSObject
+@interface Piece : NSObject <NSCopying>
 
 @property (nonatomic) PieceType type;
 @property (nonatomic) Side side;
+@property (nonatomic) int numMoves;
 
 -(id)initWithType:(PieceType)type side:(Side)side;
 

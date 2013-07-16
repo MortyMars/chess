@@ -24,6 +24,9 @@
 		49AE4AE51794909A009D59BE /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE4AE41794909A009D59BE /* Piece.m */; };
 		49AE4AE717949579009D59BE /* pieces.png in Resources */ = {isa = PBXBuildFile; fileRef = 49AE4AE617949579009D59BE /* pieces.png */; };
 		49AE4AEA17949AD1009D59BE /* RuleBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE4AE917949AD1009D59BE /* RuleBook.m */; };
+		49AE4AED1794A5CE009D59BE /* Pos.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE4AEC1794A5CE009D59BE /* Pos.m */; };
+		49C031A01794B238001A2048 /* Minimax.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C0319F1794B238001A2048 /* Minimax.m */; };
+		49C031A31794B4D6001A2048 /* Move.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C031A21794B4D6001A2048 /* Move.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,12 @@
 		49AE4AE617949579009D59BE /* pieces.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pieces.png; sourceTree = "<group>"; };
 		49AE4AE817949AD1009D59BE /* RuleBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuleBook.h; sourceTree = "<group>"; };
 		49AE4AE917949AD1009D59BE /* RuleBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuleBook.m; sourceTree = "<group>"; };
+		49AE4AEB1794A5CE009D59BE /* Pos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pos.h; sourceTree = "<group>"; };
+		49AE4AEC1794A5CE009D59BE /* Pos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pos.m; sourceTree = "<group>"; };
+		49C0319E1794B238001A2048 /* Minimax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Minimax.h; sourceTree = "<group>"; };
+		49C0319F1794B238001A2048 /* Minimax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Minimax.m; sourceTree = "<group>"; };
+		49C031A11794B4D6001A2048 /* Move.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Move.h; sourceTree = "<group>"; };
+		49C031A21794B4D6001A2048 /* Move.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Move.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,16 +145,22 @@
 			children = (
 				49AE4AB517948BAD009D59BE /* AppDelegate.h */,
 				49AE4AB617948BAD009D59BE /* AppDelegate.m */,
-				49AE4AB817948BAD009D59BE /* MainMenu.xib */,
+				49C0319E1794B238001A2048 /* Minimax.h */,
+				49C0319F1794B238001A2048 /* Minimax.m */,
 				49AE4AD717948BB8009D59BE /* ChessView.h */,
 				49AE4AD817948BB8009D59BE /* ChessView.m */,
 				49AE4ADA17948D73009D59BE /* ChessBoard.h */,
 				49AE4ADB17948D73009D59BE /* ChessBoard.m */,
 				49AE4AE817949AD1009D59BE /* RuleBook.h */,
 				49AE4AE917949AD1009D59BE /* RuleBook.m */,
+				49C031A11794B4D6001A2048 /* Move.h */,
+				49C031A21794B4D6001A2048 /* Move.m */,
 				49AE4AE31794909A009D59BE /* Piece.h */,
 				49AE4AE41794909A009D59BE /* Piece.m */,
+				49AE4AEB1794A5CE009D59BE /* Pos.h */,
+				49AE4AEC1794A5CE009D59BE /* Pos.m */,
 				49AE4AE017948EC3009D59BE /* util.h */,
+				49AE4AB817948BAD009D59BE /* MainMenu.xib */,
 				49AE4AE617949579009D59BE /* pieces.png */,
 				49AE4ABB17948BAD009D59BE /* Images.xcassets */,
 				49AE4AAA17948BAD009D59BE /* Supporting Files */,
@@ -282,12 +297,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49AE4AED1794A5CE009D59BE /* Pos.m in Sources */,
+				49C031A31794B4D6001A2048 /* Move.m in Sources */,
 				49AE4AD917948BB8009D59BE /* ChessView.m in Sources */,
 				49AE4ADC17948D73009D59BE /* ChessBoard.m in Sources */,
 				49AE4AE51794909A009D59BE /* Piece.m in Sources */,
 				49AE4AB717948BAD009D59BE /* AppDelegate.m in Sources */,
 				49AE4AEA17949AD1009D59BE /* RuleBook.m in Sources */,
 				49AE4AB017948BAD009D59BE /* main.m in Sources */,
+				49C031A01794B238001A2048 /* Minimax.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +518,7 @@
 				49AE4AD317948BAD009D59BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49AE4AD417948BAD009D59BE /* Build configuration list for PBXNativeTarget "chessTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +527,7 @@
 				49AE4AD617948BAD009D59BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

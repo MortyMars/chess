@@ -7,10 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "util.h"
 
-@class ChessBoard;
+@class ChessBoard,Pos;
 @interface ChessView : NSView
 {
     ChessBoard *board;
+    
+    BOOL hasSelTile;
+    Pos *selTile;
+    NSSet *coverage;
 }
 @end
