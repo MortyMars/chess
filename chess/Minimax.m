@@ -19,42 +19,35 @@
 {
     int bestScore = -INFINITY;
     Move *bestMove = nil;
-    
-    for (Move *move in [self possibleMovesForSide:side board:board]) {
-        int score = [self minimaxForMove:move side:side board:board depth:3 alpha: -INFINITY beta:INFINITY];
-        NSLog(@"move %@ gets score %d",move,score);
+    for (Move *newMove in [self possibleMovesForSide:side board:board]) {
+        ChessBoard *newBoard = board.copy;
+        [newBoard performMove:newMove];
+        int score = [self minimaxForSide:side board:newBoard depth:2 alpha:-INFINITY beta:INFINITY];
         if (score > bestScore || !bestMove) {
-            NSLog(@"a good move is %@ for score %d",move,score);
+            NSLog(@"A good move is %@ with score %d",newMove,score);
             bestScore = score;
-            bestMove = move;
+            bestMove = newMove;
         }
     }
-    NSLog(@"best score is %d by going %@",bestScore,bestMove);
-    
     return bestMove;
 }
 
-+(int)minimaxForMove:(Move *)move side:(Side)side board:(ChessBoard *)board depth:(int)depth alpha:(int)alpha beta:(int)beta
++(int)minimaxForSide:(Side)side board:(ChessBoard *)board depth:(int)depth alpha:(int)alpha beta:(int)beta
 {
-    //NSLog(@"depth %d\n%@\n--------",depth,newBoard);
-    ChessBoard *newBoard = board.copy;
-    [newBoard performMove:move];
-    //NSLog(@"trying \n%@ (last move:%@) at depth %d",newBoard,move,depth);
-    
     if (depth <= 0) {
-        //NSLog(@"board \n%@ gets score %d for side %@",newBoard,[self scoreForSide:side board:newBoard originalSide:originalSide],(side == SideWhite)?@"white":@"black");
-        return [self scoreForSide:side board:newBoard];
+        return [self scoreForSide:side board:board];
     } else {
-        int bestScore = -INFINITY;
+        int best = INFINITY;
         Side otherSide = (side == SideWhite) ? SideBlack : SideWhite;
-        for (Move *newMove in [self possibleMovesForSide:otherSide board:newBoard]) {
-            //ChessBoard *testBoard = newBoard.copy;
-            int score = -[self minimaxForMove:newMove side:otherSide board:newBoard depth:depth - 1 alpha:-beta beta:-alpha];
-            if (score > bestScore) bestScore = score;
-            if (score > alpha) alpha = score;
-            if (score >= beta) return score;
+        for (Move *newMove in [self possibleMovesForSide:otherSide board:board]) {
+            ChessBoard *newBoard = board.copy;
+            [newBoard performMove:newMove];
+            int score = -[self minimaxForSide:otherSide board:newBoard depth:depth - 1 alpha:-beta beta:-alpha];
+            best = MIN(best,score);
+            //if (score > alpha) alpha = score;
+            //if (alpha >= beta) return alpha;
         }
-        return bestScore;
+        return best;
     }
 }
 
@@ -79,7 +72,7 @@
             }
         }
     }
-    //if (score) NSLog(@"Score is %d for board\n%@ and side %d",score,board,side);
+    //if (score) NSLog(@"Score is %d for board\n%@ and side %@",score,board,(side == SideBlack) ? @"black" : @"white");
     
     return score;
 }
