@@ -22,6 +22,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         board = [[ChessBoard alloc] init];
+        [board setupPieces];
     }
     
     return self;

@@ -17,6 +17,9 @@
 
 @property (nonatomic, strong) Move *lastMove;
 
+
+-(void)setupPieces;
+
 -(Piece *)pieceAtX:(int)x y:(int)y;
 -(Piece *)pieceAtPos:(Pos *)pos;
 -(Piece *)movePieceFrom:(Pos *)start to:(Pos *)dest;

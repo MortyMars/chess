@@ -26,4 +26,10 @@
     Move *newMove = [[Move allocWithZone:zone] initWithStart:self.start dest:self.dest];
     return newMove;
 }
+
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"[move: %@ to %@]",self.start,self.dest];
+}
+
 @end

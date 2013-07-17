@@ -17,23 +17,27 @@
 -(id)init
 {
     if (self=[super init]) {
-        // init chess pieces
-        board[0][0] = [[Piece alloc] initWithType:PieceTypeRook side:SideWhite];
-        board[1][0] = [[Piece alloc] initWithType:PieceTypeKnight side:SideWhite];
-        board[2][0] = [[Piece alloc] initWithType:PieceTypeBishop side:SideWhite];
-        board[3][0] = [[Piece alloc] initWithType:PieceTypeQueen side:SideWhite];
-        board[4][0] = [[Piece alloc] initWithType:PieceTypeKing side:SideWhite];
-        board[5][0] = [[Piece alloc] initWithType:PieceTypeBishop side:SideWhite];
-        board[6][0] = [[Piece alloc] initWithType:PieceTypeKnight side:SideWhite];
-        board[7][0] = [[Piece alloc] initWithType:PieceTypeRook side:SideWhite];
-        
-        for (int x = 0; x < 8; x++) {
-            board[x][1] = [[Piece alloc] initWithType:PieceTypePawn side:SideWhite];
-            board[x][6] = [[Piece alloc] initWithType:PieceTypePawn side:SideBlack];
-            board[x][7] = [[Piece alloc] initWithType:board[x][0].type side:SideBlack];
-        }
     }
     return self;
+}
+
+-(void)setupPieces
+{
+    // init chess pieces
+    board[0][0] = [[Piece alloc] initWithType:PieceTypeRook side:SideWhite];
+    board[1][0] = [[Piece alloc] initWithType:PieceTypeKnight side:SideWhite];
+    board[2][0] = [[Piece alloc] initWithType:PieceTypeBishop side:SideWhite];
+    board[3][0] = [[Piece alloc] initWithType:PieceTypeQueen side:SideWhite];
+    board[4][0] = [[Piece alloc] initWithType:PieceTypeKing side:SideWhite];
+    board[5][0] = [[Piece alloc] initWithType:PieceTypeBishop side:SideWhite];
+    board[6][0] = [[Piece alloc] initWithType:PieceTypeKnight side:SideWhite];
+    board[7][0] = [[Piece alloc] initWithType:PieceTypeRook side:SideWhite];
+    
+    for (int x = 0; x < 8; x++) {
+        board[x][1] = [[Piece alloc] initWithType:PieceTypePawn side:SideWhite];
+        board[x][6] = [[Piece alloc] initWithType:PieceTypePawn side:SideBlack];
+        board[x][7] = [[Piece alloc] initWithType:board[x][0].type side:SideBlack];
+    }
 }
 
 -(Piece *)pieceAtX:(int)x y:(int)y
@@ -65,7 +69,9 @@
 
 -(Piece *)movePieceFrom:(Pos *)start to:(Pos *)dest
 {
-    board[(int)dest.x][(int)dest.y] = board[(int)start.x][(int)start.y];    // move piece
+    // move in board
+    board[(int)dest.x][(int)dest.y] = board[(int)start.x][(int)start.y];
+    
     Piece *piece = board[(int)dest.x][(int)dest.y];
     piece.numMoves++; // increment number of moves
     
@@ -76,7 +82,7 @@
 
 -(id)copyWithZone:(NSZone *)zone
 {
-    ChessBoard *newBoard = [ChessBoard allocWithZone:zone];
+    ChessBoard *newBoard = [[ChessBoard allocWithZone:zone] init];
     for (int x = 0; x < 8; x++) {
         for (int y = 0; y < 8; y++) {
             if (board[x][y]) newBoard->board[x][y] = board[x][y].copy;
@@ -84,6 +90,18 @@
     }
     newBoard.lastMove = self.lastMove.copy;
     return newBoard;
+}
+
+-(NSString *)description
+{
+    NSString *desc = @"";
+    for (int y = 7; y >= 0; y--) {
+        for (int x = 0; x < 8; x++) {
+            desc = [desc stringByAppendingFormat:@"%d ",board[x][y].type];
+        }
+        desc = [desc stringByAppendingString:@"\n"];
+    }
+    return desc;
 }
 
 @end
