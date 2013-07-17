@@ -48,13 +48,13 @@
             Piece *leftRook = [board pieceAtX:0 y:pos.y];
             
             // kingside
-            if (rightRook.numMoves == 0) {
+            if (rightRook && rightRook.numMoves == 0) {
                 if (![board pieceAtX:6 y:pos.y] && ![board pieceAtX:5 y:pos.y])
                     [coverage addObject:[Pos posWithX:6 y:pos.y]];
             }
             
             // queenside
-            if (leftRook.numMoves == 0) {
+            if (leftRook && leftRook.numMoves == 0) {
                 if (![board pieceAtX:3 y:pos.y] && ![board pieceAtX:2 y:pos.y] && ![board pieceAtX:1 y:pos.y])
                     [coverage addObject:[Pos posWithX:2 y:pos.y]];
             }
