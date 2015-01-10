@@ -54,7 +54,7 @@
 		49AE4AB617948BAD009D59BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		49AE4AB917948BAD009D59BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		49AE4ABB17948BAD009D59BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		49AE4AC117948BAD009D59BE /* chessTests.xctest */ = {isa = PBXFileReference; explicitFileType = folder; includeInIndex = 0; path = chessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49AE4AC117948BAD009D59BE /* chessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49AE4AC217948BAD009D59BE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		49AE4AC917948BAD009D59BE /* chessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chessTests-Info.plist"; sourceTree = "<group>"; };
 		49AE4ACB17948BAD009D59BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };

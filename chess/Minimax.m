@@ -13,6 +13,8 @@
 #import "Pos.h"
 #import "RuleBook.h"
 
+#define NUM_MOVES_AHEAD 3
+
 @implementation Minimax
 
 +(Move *)bestMoveForSide:(Side)side board:(ChessBoard *)board
@@ -22,7 +24,7 @@
     for (Move *newMove in [self possibleMovesForSide:side board:board]) {
         ChessBoard *newBoard = board.copy;
         [newBoard performMove:newMove];
-        int score = [self minimaxForSide:side board:newBoard depth:2 alpha:-INFINITY beta:INFINITY];
+        int score = [self minimaxForSide:side board:newBoard depth:NUM_MOVES_AHEAD alpha:-INFINITY beta:INFINITY];
         if (score > bestScore || !bestMove) {
             NSLog(@"A good move is %@ with score %d",newMove,score);
             bestScore = score;
