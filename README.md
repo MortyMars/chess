@@ -26,12 +26,12 @@ Les couleurs des cases de l'échiquier ont été modifiées aux mêmes fins.
 Ce qui reste à faire (c'est ma propre et ambitieuse TODO list)
 ====================
 Essentiellement :
--Détection de la mise en échec, et de l'échec et mat (on peut jouer aujourd'hui sans Roi...)
--Amélioration du recours à l'algorithme MiniMax alpha beta (actuellement je joue mieux que l'AI ;-))
+- Détection de la mise en échec, et de l'échec et mat (on peut jouer aujourd'hui sans Roi...)
+- Amélioration du recours à l'algorithme MiniMax alpha beta (actuellement je joue mieux que l'AI ;-))
 
 Optionnellement :
--Gestion de la prise en passant (pour un résultat encore plus "professionnel")
--Création d'une sortie texte listant les différents coups joués (fonction à ce stade basiquement initialisée pour le coté AI)
--Adoption d'une des conventions officielles pour le nommage des coups
+- Gestion de la prise en passant (pour un résultat encore plus "professionnel")
+- Création d'une sortie texte listant les différents coups joués (fonction à ce stade basiquement initialisée pour le coté AI)
+- Adoption d'une des conventions officielles pour le nommage des coups
 
 
