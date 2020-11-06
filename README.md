@@ -1,4 +1,5 @@
-Minimax chess AI player implementation in Objective-C.
+Minimax chess AI player implementation in Objective-C
+=====================================================
 
 Commentaires personnels (MortyMars)
 =======================
