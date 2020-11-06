@@ -7,8 +7,8 @@ Implémentation vraiment cool de jeu d'échecs, qui présente le gros intérêt 
 de surcroit pour macOS plutôt qu'iOS souvent privilégié.
 Les points les plus remarquables du code proposé sont (AMHA), 
 - sa grande clarté pour l'essentiel (même pour un noob comme moi) apportée par un découpage en fichiers structurés 
-  et suffisemment courts pour être bien lisibles, 
-- sa grande efficacité due au recours à de nombreuses Méthodes élémentaires de classes et d'instances,
+  et suffisamment courts pour être lisibles, 
+- sa grande efficacité due au recours à de nombreuses Méthodes élémentaires, de classes et d'instances,
 - sa bonne capacité d'évolution par réutilisation des fonctions unitaires déjà implémentées.
 
 Notes de mise à jour (11/2020)
